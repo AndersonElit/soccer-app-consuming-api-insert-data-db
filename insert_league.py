@@ -1,11 +1,11 @@
-from consume_api import get_all, insert_data
+from consume_api import insert_league
 import json
 
 file = open("leagues_json/premier_league.json", "r")
 data = json.load(file)
 file.close()
 
-url = 'http://localhost:3000/leagues/'
+url = 'http://localhost:3000/leagues/add'
 
 league_name = data['league']
 temps = data['temps']
@@ -23,5 +23,5 @@ for item in temps:
         "dates": dates
     }
 
-    insert_data(url, temp_obj)
+    insert_league(url, temp_obj)
 
