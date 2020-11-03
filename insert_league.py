@@ -7,4 +7,21 @@ file.close()
 
 url = 'http://localhost:3000/leagues/'
 
-insert_data(url, data)
+league_name = data['league']
+temps = data['temps']
+
+for item in temps:
+
+    temp = item['temp']
+    teams = item['teams']
+    dates = item['dates']
+
+    temp_obj = {
+        "league": league_name,
+        "temp": temp,
+        "teams": teams,
+        "dates": dates
+    }
+
+    insert_data(url, temp_obj)
+

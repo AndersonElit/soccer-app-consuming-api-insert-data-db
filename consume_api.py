@@ -11,5 +11,5 @@ def get_all(url):
 def insert_data(url, data):
     res = requests.post(url, json=data)
     json_data = res.json()
-    print(f"data for {json_data['league']} team were inserted in DB")
+    print(f"data for temp {json_data['temp']} were inserted in DB")
     return ''
